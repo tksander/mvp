@@ -2,7 +2,7 @@ var StatView = Backbone.View.extend({
     
   id: 'stat',
 
-  template: _.template('<p> Your max speed was <%= currentStat %> </p>'),
+  template: _.template('<p> Your max speed was <%= Stat %> </p>'),
 
   events: {
     'click': 'clickAction'
@@ -10,6 +10,7 @@ var StatView = Backbone.View.extend({
 
 
   initialize: function() {
+    this.listenTo(this.model, "change", this.render),
     this.render()
   },
 
@@ -24,10 +25,10 @@ var StatView = Backbone.View.extend({
   },
 
   render: function() {
+    console.log('statview   ',this.model.get('currentStat'));
     var statEntry = this.template({
-      currentStat: this.model.get('currentStat')
+      Stat: this.model.get('currentStat')
     });
-    console.log(statEntry);
 
     // render the statEntry to the DOM
     this.$el.html(statEntry);
