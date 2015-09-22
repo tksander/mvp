@@ -6,15 +6,17 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
 
+    var challengesCollection = 
+
     // instantiate the compare view
     this.compare = new CompareView();
 
     this.input = new InputView({
-      collection: new Challenges()
+      collection: this.model.get('challenges')
     });
 
     this.list = new ChallengeListView({
-      collection: new Challenges() 
+      collection: this.model.get('challenges')
     });
 
     this.render();
@@ -24,11 +26,10 @@ var AppView = Backbone.View.extend({
 
     this.$el.html([
       this.compare.$el,
+      this.input.$el,
       this.list.$el
     ]);
 
-
-    // For potential chaining?
     return this;
   }
 

@@ -17,10 +17,10 @@ var InputView = Backbone.View.extend({
   },
 
   keyAction: function(e) {
-
     var isEnterKey = (e.which === 13);
 
     if(isEnterKey) {
+      console.log(this.$el.val());
       this.collection.addChallenge(this.$el.val());
       this.resetInput();
     }

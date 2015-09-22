@@ -7,7 +7,6 @@ var ChallengeListView = Backbone.View.extend({
   },
 
   render: function() {
-
     this.$el.empty();
 
     this.entries = this.collection.models.map(function(model) {

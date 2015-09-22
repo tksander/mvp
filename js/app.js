@@ -1,5 +1,7 @@
-// Create new app, instantiate AppView
-var app = new AppView({
-  model: new StatEntry()
-});
+var App = Backbone.Model.extend({
 
+  // create challenges
+  initialize: function () {
+    this.set('challenges', new Challenges());
+  }
+});
