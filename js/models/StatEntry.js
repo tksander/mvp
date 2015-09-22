@@ -15,9 +15,6 @@ var StatEntry = Backbone.Model.extend({
   },
 
   intialize: function() {
-    console.log('init')
-    // Initialize the stat to first stat in array
-    this.setStat(0,0);
   },
 
   iterateStat: function() {
@@ -37,13 +34,13 @@ var StatEntry = Backbone.Model.extend({
   },
 
   setStat: function (currentStatIndex, currentStatTextIndex) {
-    console.log("init fire")
-    this.set({
-      'currentStatTextIndex': this.get('data')[currentStatTextIndex][0]
-    });
 
+    console.log(this.get('currentStatIndex'))
     this.set({
       'currentStat': this.get('data')[currentStatIndex][1]
+    });
+    this.set({
+      'currentStatTextIndex': this.get('data')[currentStatTextIndex][0]
     });
 
   } 
