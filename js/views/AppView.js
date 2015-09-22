@@ -4,7 +4,6 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
 
-
     this.stat = new StatView({
       model: this.model
     });
@@ -18,7 +17,7 @@ var AppView = Backbone.View.extend({
       this.stat.$el
     ]);
 
-    this.$el.html("Hello World");    
+    // this.$el.html("Hello World");    
 
     // For potential chaining?
     return this;

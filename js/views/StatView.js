@@ -9,7 +9,8 @@ var StatView = Backbone.View.extend({
   },
 
 
-  intialize: function() {
+  initialize: function() {
+    alert('statview')
     // Listen to click event and re-render - not sure what this will do
     this.listenTo(this.model, 'change', this.render);
     this.render()
@@ -20,11 +21,16 @@ var StatView = Backbone.View.extend({
 
   },
 
-  render: function() {
+  clickAction: function () {
 
+  },
+
+  render: function() {
+    alert('rendering statview')
     var statEntry = this.template({
-      maxSpeed: this.model.get('max')
+      maxSpeed: this.model.get('max_speed')
     });
+    console.log(statEntry);
 
     // render the statEntry to the DOM
     this.$el.html(statEntry);
