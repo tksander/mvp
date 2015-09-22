@@ -10,8 +10,12 @@ var StatView = Backbone.View.extend({
 
 
   initialize: function() {
+
+    // Setup intial state of model
+    this.model.getData();
+    this.model.setStat(0)
+
     this.listenTo(this.model, "change", this.render),
-    this.model.setStat(0,0)
     this.render()
   },
 
@@ -31,7 +35,7 @@ var StatView = Backbone.View.extend({
 
 
     var statEntry = this.template({
-      statText: this.model.get('currentStatTextIndex'),
+      statText: this.model.get('currentStatText'),
       stat: this.model.get('currentStat')
     });
 

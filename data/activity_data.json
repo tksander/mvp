@@ -1,67 +1,4 @@
-var StatEntry = Backbone.Model.extend({
-
-  // Add additional categories
-  defaults: {
-    data: [ // (Render Text, Render Num, JSON name, Unit)
-      ['Distance traveled', 56, 0],
-      ['Total Elapsed Time', 57, 0],
-      ['Calories Burned', 58, 0],
-      ['Maximum Speed', 59, 0]
-    ],
-    currentDataIndex: 0,
-    currentStat: 0,
-    currentStatText: 0,
-  },
-
-  intialize: function() {
-    // This won't work right now b/c it only pulls data
-    // after the first render to the page. Figure this out
-    this.mode.getData;
-  },
-
-  iterateStat: function() {
-
-    var dataLength = this.get('data').length;
-
-    // Iterate through the data index for rendering
-    var currentDataIndex = this.get('currentDataIndex');
-    currentDataIndex = (currentDataIndex + 1) % dataLength;
-    this.set('currentDataIndex', currentDataIndex);
-
-    this.setStat(currentDataIndex, currentDataIndex);
-  },
-
-  setStat: function (currentDataIndex) {
-
-    this.set({
-      'currentStat': this.get('data')[currentDataIndex][1]
-    });
-    this.set({
-      'currentStatText': this.get('data')[currentDataIndex][0]
-    });
-  }, 
-
-  // This will eventually fetch the data from the database
-  getData: function () {
-    
-    var dataArray = this.get('data');
-    var jsonNames = [
-                    'distance',
-                    'moving_time',
-                    'calories',
-                    'max_speed'
-                    ];
-    var tempDatastore = this.tempDatastore;
-
-    // set the JSON name and num
-    _.each(jsonNames, function (jsonName, index) {
-      dataArray[index][1] = tempDatastore[jsonName];
-      dataArray[index][2] = jsonName;
-    })
-  },
-
-  // Temp fake data until server hooked up
-  tempDatastore: {
+{
   "id": 321934,
   "resource_state": 3,
   "external_id": "2012-12-12_21-40-32-80-29011.fit",
@@ -265,6 +202,3 @@ var StatEntry = Backbone.Model.extend({
     }
   ]
 }
-
-});
-
