@@ -59,6 +59,7 @@ table {
   left: 0;
   right: 0;
   margin: auto;
+  background-color: rgba(255,255,255,0.7);
 }
 
 #app {
