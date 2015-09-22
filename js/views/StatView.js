@@ -15,7 +15,7 @@ var StatView = Backbone.View.extend({
     this.model.getData();
     this.model.setStat(0)
 
-    this.listenTo(this.model, "change", this.render),
+    this.listenTo(this.model, "change", this.render), 
     this.render()
   },
 

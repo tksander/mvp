@@ -48,7 +48,7 @@ table {
 /*END RESET */
 
 #container {
-  width: 600px;
+  width: 800px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -60,9 +60,11 @@ table {
 }
 
 #app {
-  width: 80%;
+  display: flex;
+  align-items: center;
+ /* width: 80%;
   height: 90%;
-  position: absolute;
+  position: absolute;*/
   margin: auto;
   left: 0;
   right: 0;
@@ -100,16 +102,18 @@ input {
 }
 
 .statTitle {
-  font-size: 36pt;
+  font-size: 18pt;
   font-family: 'Helvetica', serif;
   text-align: center;
   padding-bottom: 36px;
 }
 
 #statChallenger {
+  display:inline-block;
   float: left;
 }
 
 #stat {
+  display:inline-block;
   float: left;
 }
