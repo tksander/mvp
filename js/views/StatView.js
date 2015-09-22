@@ -2,7 +2,7 @@ var StatView = Backbone.View.extend({
     
   id: 'stat',
 
-  template: _.template('<p> Your max speed was <%= Stat %> </p>'),
+  template: _.template('<div class="statText"> <%= statText %> </div> <div class="stat"> <%= stat %> </div>'),
 
   events: {
     'click': 'clickAction'
@@ -19,15 +19,19 @@ var StatView = Backbone.View.extend({
 
   },
 
-  // Toggles stat on
+  // Iterates through stats
   clickAction: function () {
-    this.model.toggleStat();
+    this.model.iterateStat();
   },
 
   render: function() {
-    console.log('statview   ',this.model.get('currentStat'));
+
+    // Create array of array strings
+
+
     var statEntry = this.template({
-      Stat: this.model.get('currentStat')
+      statText: this.model.get('currentStatTextIndex'),
+      stat: this.model.get('currentStatText')
     });
 
     // render the statEntry to the DOM
@@ -35,6 +39,7 @@ var StatView = Backbone.View.extend({
 
     return this;
   }
+
 
 
 });

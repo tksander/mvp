@@ -3,29 +3,50 @@ var StatEntry = Backbone.Model.extend({
   // Add additional categories
   defaults: {
     data: [
-      ['distance', 56],
-      ['elapsed_time', 57],
-      ['calories', 58],
-      ['max_speed', 59]
+      ['Distance traveled', 56],
+      ['Total Elapsed Time', 57],
+      ['Calories Burned', 58],
+      ['Maximum Speed', 59]
     ],
     currentStatIndex: 0,
-    currentStat: 0
+    currentStat: 0,
+    currentStatTextIndex: 0,
+    currentStatText: 0,
   },
 
   intialize: function() {
-    // Initialize stat
+    console.log('init')
+    // Initialize the stat to first stat in array
+    this.setStat(0,0);
   },
 
-  toggleStat: function() {
+  iterateStat: function() {
 
+    // Iterate the current stat for rendering
     var currentStatIndex = this.get('currentStatIndex');
     currentStatIndex = currentStatIndex + 1;
-    // Toggle to the next stat
-    this.set('currentStatIndex', currentStatIndex );
+    this.set('currentStatIndex', currentStatIndex);
+
+
+    // Iterate the current stat text for rendering
+    var currentStatTextIndex = this.get('currentStatIndex');
+    currentStatTextIndex = currentStatTextIndex + 1;
+    this.set('currentStatTextIndex', currentStatTextIndex);
+    
+    this.setStat(currentStatIndex, currentStatTextIndex);
+  },
+
+  setStat: function (currentStatIndex, currentStatTextIndex) {
+    console.log("init fire")
+    this.set({
+      'currentStatTextIndex': this.get('data')[currentStatTextIndex][0]
+    });
+
     this.set({
       'currentStat': this.get('data')[currentStatIndex][1]
     });
-  }
+
+  } 
 });
 
 
