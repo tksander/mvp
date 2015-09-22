@@ -1,29 +1,29 @@
-var StatsView = Backbone.View.extend({
+// var StatsView = Backbone.View.extend({
 
-  classname: 'stats',
+//   classname: 'stats',
 
-  template: _.template '<h2><% if(isDealer){ %>Dealer<% } else{ %>You<% } %> (<span class="score"></span>)</h2>',
+//   template: _.template '<h2><% if(isDealer){ %>Dealer<% } else{ %>You<% } %> (<span class="score"></span>)</h2>',
 
-  initialize: function() {
-    this.collection.on('change', this.render);
-    this.render;
-  },
+//   initialize: function() {
+//     this.collection.on('change', this.render);
+//     this.render;
+//   },
 
 
-  render: function() {
-    this.$el.children().detch();
-    this.$el.html.this.template.this.collection;
-    this.$el.append.this.collection.map(function (stat) {
-      new StatView(model: stat).$el
-    };
+//   render: function() {
+//     this.$el.children().detch();
+//     this.$el.html.this.template.this.collection;
+//     this.$el.append.this.collection.map(function (stat) {
+//       new StatView(model: stat).$el
+//     };
     
-});
+// });
 
 
- render: ->
-    @$el.children().detach()
-    @$el.html @template @collection
-    @$el.append @collection.map (card) ->
-      new CardView(model: card).$el
+//  render: ->
+//     @$el.children().detach()
+//     @$el.html @template @collection
+//     @$el.append @collection.map (card) ->
+//       new CardView(model: card).$el
 
-    @$('.score').text @collection.maxScore()
+//     @$('.score').text @collection.maxScore()

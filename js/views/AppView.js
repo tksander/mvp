@@ -8,8 +8,14 @@ var AppView = Backbone.View.extend({
 
     // instantiate the compare view
     this.compare = new CompareView();
-    console.log("app view, showing this.compare")
-    console.log(this.compare);
+
+    this.input = new InputView({
+      collection: new Challenges()
+    });
+
+    this.list = new ChallengeListView({
+      collection: new Challenges() 
+    });
 
     this.render();
   },
@@ -17,7 +23,8 @@ var AppView = Backbone.View.extend({
   render: function() {
 
     this.$el.html([
-      this.compare.$el
+      this.compare.$el,
+      this.list.$el
     ]);
 
 

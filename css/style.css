@@ -48,6 +48,8 @@ table {
 /*END RESET */
 
 #container {
+  /*display: flex;
+  align-items: center;*/
   width: 800px;
   height: 100%;
   position: absolute;
@@ -62,13 +64,13 @@ table {
 #app {
   display: flex;
   align-items: center;
- /* width: 80%;
+  /*width: 80%;
   height: 90%;
-  position: absolute;*/
+  position: absolute;
   margin: auto;
   left: 0;
   right: 0;
-  margin-top: 75px;
+  margin-top: 75px;*/
 }
 
 h1 {
@@ -78,28 +80,24 @@ h1 {
   padding-bottom: 36px;
 }
 
-input {
+/*input {
   text-align: center;
   line-height: 55px;
   font-family: 'Helvetica', serif;
   font-size: 32pt;
-}
+}*/
 
 #stat {
-  width: 80%;
-  height: auto;
-  position: relative;
   margin: auto;
   text-align: center;
-  top: 5%;
 }
-
+/*
 .stat {
   color: black;
   font-family: 'Helvetica', serif;
   padding-bottom: 16px;
   font-size: 16pt;
-}
+}*/
 
 .statTitle {
   font-size: 18pt;
@@ -108,12 +106,19 @@ input {
   padding-bottom: 36px;
 }
 
+#compare {
+  align-items: center;
+}
+
 #statChallenger {
-  display:inline-block;
+  display:inline;
   float: left;
+  padding: 36px;
 }
 
 #stat {
-  display:inline-block;
+  display:inline;
   float: left;
+  padding: 36px;
+
 }
