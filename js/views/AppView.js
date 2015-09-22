@@ -2,21 +2,22 @@ var AppView = Backbone.View.extend({
 
   el: '#app',
 
-  template: _.template ('<div class=".you-stat-container"></div> <div class=".challenger-stat-container"></div>'),
+  // template: _.template ('<div class=".you-stat-container"></div> <div class=".challenger-stat-container"></div>'),
 
   initialize: function() {
 
-    this.stat = new StatView({
-      model: this.model
-    });
+    // instantiate the compare view
+    this.compare = new CompareView();
+    console.log("app view, showing this.compare")
+    console.log(this.compare);
 
     this.render();
   },
 
   render: function() {
 
-    this.$el.append([
-      this.stat.$el
+    this.$el.html([
+      this.compare.$el
     ]);
 
 

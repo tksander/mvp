@@ -92,9 +92,24 @@ input {
   top: 5%;
 }
 
-.entry {
+.stat {
   color: black;
   font-family: 'Helvetica', serif;
   padding-bottom: 16px;
   font-size: 16pt;
+}
+
+.statTitle {
+  font-size: 36pt;
+  font-family: 'Helvetica', serif;
+  text-align: center;
+  padding-bottom: 36px;
+}
+
+#statChallenger {
+  float: left;
+}
+
+#stat {
+  float: left;
 }

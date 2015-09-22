@@ -1,8 +1,8 @@
-var StatView = Backbone.View.extend({
+var StatChallengerView = Backbone.View.extend({
     
-  id: 'stat',
+  id: 'statChallenger',
 
-  template: _.template('<div class="statTitle"> You </div> <div class="statText"> <%= statText %> </div> <div class="stat"> <%= stat %> </div>'),
+  template: _.template('<div class="statTitle"> Challenger </div> <div class="statText"> <%= statText %> </div> <div class="stat"> <%= stat %> </div>'),
 
   events: {
     'click': 'clickAction'
@@ -44,5 +44,7 @@ var StatView = Backbone.View.extend({
 
     return this;
   }
+
+
 
 });
