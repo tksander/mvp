@@ -2,14 +2,30 @@ var StatEntry = Backbone.Model.extend({
 
   // Add additional categories
   defaults: {
-    distance: 0,
-    elapsed_time: 0,
-    calories: 0,
-    max_speed: 0
+    data: [
+      ['distance', 0],
+      ['elapsed_time', 1],
+      ['calories', 2],
+      ['max_speed', 3]
+    ],
+    currentStatIndex: 0,
+    currentStat: 0
   },
 
   intialize: function() {
-    alert('model made');
+    // Initialize stat
   },
 
+  toggleStat: function() {
+
+
+    var currentStatIndex = this.get('currentStatIndex');
+
+    // Toggle to the next stat
+    currentStatIndex = currentStatIndex +  1;
+    console.log(currentStatIndex);
+    this.set({
+      'currentStat': this.get('data')[currentStatIndex][1]
+    });
+  }
 });
