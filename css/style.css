@@ -88,10 +88,6 @@ h1 {
   font-size: 32pt;
 }*/
 
-#stat {
-  margin: auto;
-  text-align: center;
-}
 /*
 .stat {
   color: black;
@@ -111,15 +107,27 @@ h1 {
   align-items: center;
 }
 
+#stat {
+  margin: auto;
+  text-align: center;
+  font-size: 16pt;
+}
+
 #statChallenger {
   display:inline;
   float: left;
-  padding: 36px;
+  padding: 28px;
+  font-size: 16pt;
+  font-family: 'Helvetica', serif;
 }
 
 #stat {
   display:inline;
   float: left;
-  padding: 36px;
+  padding: 28px;
+  font-family: 'Helvetica', serif;
+}
 
+div.challenge {
+  display: block;
 }

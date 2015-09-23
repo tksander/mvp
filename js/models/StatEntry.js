@@ -72,8 +72,8 @@ var StatEntry = Backbone.Model.extend({
   },
   "name": "12/12/2012 San Francisco",
   "description": "the best ride ever",
-  "distance": 4475.4,
-  "moving_time": 1303,
+  "distance": 6426.3,
+  "moving_time": 773,
   "elapsed_time": 1333,
   "total_elevation_gain": 8.6,
   "type": "Run",
@@ -129,8 +129,8 @@ var StatEntry = Backbone.Model.extend({
     "resource_state": 2
   },
   "average_speed": 3.4,
-  "max_speed": 4.514,
-  "calories": 390.5,
+  "max_speed": 7.524,
+  "calories": 720.1,
   "has_kudoed": false,
   "segment_efforts": [
     {
