@@ -6,9 +6,8 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
 
-    var challengesCollection = 
+    // var challengesCollection = 
 
-    // instantiate the compare view
     this.compare = new CompareView();
 
     this.input = new InputView({

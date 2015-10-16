@@ -14,9 +14,7 @@ var StatEntry = Backbone.Model.extend({
   },
 
   intialize: function() {
-    // This won't work right now b/c it only pulls data
-    // after the first render to the page. Figure this out
-    this.mode.getData;
+    this.model.getData();
   },
 
   iterateStat: function() {
@@ -43,7 +41,18 @@ var StatEntry = Backbone.Model.extend({
 
   // This will eventually fetch the data from the database
   getData: function () {
-    
+    console.log('getData called')
+    // $.ajax('localhost:4568/athleteProfile', function(result) {
+    //   console.log('result', result);
+    // })
+
+    $.ajax({
+      url: "http://localhost:4568/ahleteProfile"
+    })
+      .done(function( data ) {
+          console.log(data);
+      });
+
     var dataArray = this.get('data');
     var jsonNames = [
                     'distance',
