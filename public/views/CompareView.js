@@ -25,8 +25,6 @@ var CompareView = Backbone.View.extend({
       this.statChallenger.$el
     ]);
 
-    console.log(this);
-
     return this;
   }
 });

@@ -97,10 +97,10 @@ app.get('/athleteProfile', function (req, res) {
   var args = req.arg || {};
   strava.athlete.get(args, function(err, payload) {
     if(!err) {
-       console.log(payload);
+       console.log('Athelete Profile', payload);
     }
     else {
-       console.log(err);
+       console.log('Athelete Profile', err);
     }
     res.send(payload);
   });
