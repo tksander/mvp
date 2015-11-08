@@ -16,7 +16,7 @@ var app = express();
 // app.use(express.static(__dirname + '/assets/*'));
 // app.use(express.static(__dirname + '/css/*'));
 // app.use(express.static(__dirname + '/js/**/*'));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/angular_client'));
 
 ////////////////////////////////////
 //      MongoDB Server 

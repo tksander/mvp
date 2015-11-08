@@ -1,9 +1,15 @@
 angular.module('strava', [
-                  'strava.services',
-                  'ngRoute'
-                ]);
-stravaApp.config(function ($routeProvider, $httpProvider) {
+                          'strava.services',
+                          'strava.auth',
+                          'ngRoute'
+])
+.config(function ($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/', {
+      templateUrl: 'app/compete/compete.html',
+      controller: 'CompeteController',
+      authenticate: true
+    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
@@ -26,7 +32,7 @@ stravaApp.config(function ($routeProvider, $httpProvider) {
   var attach = {
     request: function (object) {
       var jwt = $window.localStorage.getItem('com.strava');
-      if (jtw) {
+      if (jwt) {
         object.headers['x-access-token'] = jtw;
       }
       object.headers['Allow-Control-Allow-Origin'] = "*";

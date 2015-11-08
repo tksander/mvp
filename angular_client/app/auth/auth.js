@@ -1,4 +1,4 @@
-angular.module('shortly.auth', [])
+angular.module('strava.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
