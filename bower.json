@@ -10,8 +10,9 @@
     "client/lib"
   ],
   "dependencies": {
+    "Materialize": "materialize#~0.97.2",
     "angular": "~1.3.16",
-    "angular-route": "~1.3.16",
-    "angular-mocks": "~1.3.16"
+    "angular-mocks": "~1.3.16",
+    "angular-route": "~1.3.16"
   }
 }

@@ -1,5 +1,7 @@
 angular.module('strava', [
-                          'strava.services',
+                          'services.auth',
+                          'services.data',
+                          'strava.compete',
                           'strava.auth',
                           'ngRoute'
 ])
@@ -8,20 +10,12 @@ angular.module('strava', [
     .when('/', {
       templateUrl: 'app/compete/compete.html',
       controller: 'CompeteController',
-      authenticate: true
+      authenticate: false
     })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    .when('/signup', {
-      templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
-    })
-    .when('/compete', {
-      templateUrl: 'app/compete/compete.html',
-      controller: 'CompeteController'
-    });
     $httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens', function ($window) {
