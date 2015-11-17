@@ -4,10 +4,8 @@ var helpers     = require('./helpers.js'); // our custom middleware
 
 
 module.exports = function (app, express) {
-  console.log('express in exports', express);
   // Express 4 allows us to use multiple routers with their own configurations
   var stravaRouter = express.Router();
-  console.log('stravaRouter', stravaRouter);
 
   app.use(morgan('dev'));
   app.use(bodyParser.urlencoded({extended: true}));

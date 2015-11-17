@@ -4,51 +4,35 @@ angular.module('services.data', [])
   
 
   var getFriends = function () {
-    $http({
+    return $http({
       method: 'GET',
-      url: '/api/listFriends'
-    })
-    .then(function (resp) {
-      return resp.data;
-    })
-    .catch(function (error) {
-      return error;
+      url: '/api/strava/listFriends'
     });
   };
 
   var getAthleteProfile = function () {
     return $http({
       method: 'GET',
-      url: '/api/athleteProfile'
-    })
-    .then(resp)
-    .catch(error)
-
-  };
-
-  var getAthletesProfile = function () {
-    $http({
-      method: 'GET',
-      url: '/api/athletesProfile'
-    })
-    .then(function (resp) {
-      return resp.data;
-    })
-    .catch(function (error) {
-      return error;
+      url: '/api/strava/athleteProfile'
     });
   };
 
-  var getAtheleteStats = function () {
-    $http({
-      method: 'GET',
-      url: '/api/athleteStats'
-    })
-    .then(function (resp) {
-      return resp.data;
-    })
-    .catch(function (error) {
-      return error;
+  var getAthletesProfile = function () {
+  athleteId = athleteId || 3888371;
+   return $http({
+      method: 'POST',
+      url: '/api/strava/athletesProfile',
+      data:   {arg: {id: athleteId}}
+    });
+  };
+
+  var getAthletesStats = function (athleteId) {
+    athleteId = athleteId || 3888371;
+    console.log('in data', athleteId);
+    return $http({
+      method: 'POST',
+      url: '/api/strava/athletesStats',
+      data:   {arg: {id: athleteId}}
     });
   };
 
@@ -56,7 +40,7 @@ angular.module('services.data', [])
     getFriends: getFriends,
     getAthleteProfile: getAthleteProfile,
     getAthletesProfile: getAthletesProfile,
-    getAtheleteStats: getAtheleteStats
+    getAthletesStats: getAthletesStats
   };
   return service;
 });

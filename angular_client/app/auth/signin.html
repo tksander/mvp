@@ -1,9 +1,23 @@
-<div id='signin' >
-  <h1>Sign In</h1>
-    <form name = "signinForm" ng-submit = 'signin()'>
-      <input type = 'text' ng-model = 'user.username'>
-      <button>signin</button>
-      <a href="http://localhost:4568/authorize"><img src="assets/LogInWithStrava.png" alt="" /></a>
-    </form>    <a href = '#signup'>Don't have an account? <strong>Signup</strong> ... </a> 
+<div class="container">
+ <div class="row">
+    <div class="col s12">
+      <div class="card  white lighten-1">
+        <div class="card-content black-text">
+          <div id='signin' >
+            <h1>Sign In</h1>
+              <form name = "signinForm" ng-submit = 'signin()'>
+                <input type = 'text' ng-model = 'user.username'>
+                <button>signin</button>
+                <a href="api/strava/authorize"><img src="assets/LogInWithStrava.png" alt="" /></a>
+              </form>    <a href = '#signup'>Don't have an account? <strong>Signup</strong> ... </a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
 
