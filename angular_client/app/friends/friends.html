@@ -1,31 +1,43 @@
 <div class="container">
 
-<!--   <nav>
-         <ul id="nav-mobile" class="right hide-on-med-and-down">
- <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </nav>
-         -->
+  <nav>
+     <div class="nav-wrapper white blue-text text-darken-2">
+       <a href="#" class="brand-logo black-text">Strava Compete</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li ><a class="black-text" href="sass.html">Stats</a></li>
+         <li><a class="black-text" href="badges.html">My Profile</a></li>
+         <li><a class="black-text" href="collapsible.html">Logout</a></li>
+       </ul>
+     </div>
+   </nav>
+        
 
 
- <div class="row">
-      <div class="card  white lighten-1">
-        <div class="card-content black-text">
-          <span class="card-title">Friends</span>
-          <div class="row" ng-repeat="rows in data.chunkedFriends">
-              <div class="col s3" ng-click="getFriendId(friend)" ng-repeat="friend in rows">
-                <div><friendpic></friendpic></div>
-                <div class="friend_text"> {{ friend.firstname }} </div>
-              </div>
+<div class="row">
+  <div class="col s12">
+    <div class="card  white lighten-1">
+      <div class="card-content black-text">
+        <span class="card-title">Select Your Challenger!</span>
+        <div class="row" ng-repeat="rows in data.chunkedFriends">
+          <div class="col s3" ng-click="getFriendId(friend); goToEmail(friend)" ng-repeat="friend in rows">
+            <div class="imgWrap">
+              <img class="friend_pic" src= " {{ friend.profile }}"  alt="Profile Picture">
+              <p class="imgDescription">
+                <p class="text">Challenge <br>{{ friend.firstname }}</p>
+              </p>
+            </div>
+            <div class="friend_text">
+              {{ friend.firstname }} 
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+</div>
+
 

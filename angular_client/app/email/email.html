@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <form class="col s12">
+      <img class="friend_pic" src= " {{ challenger.profile }}"  alt="Profile Picture"> <p> Send {{ challenger.firstname }} a sign up email </p>
+
+      <div class="row">
+       <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">{{ challenger.firstname }}'s Email</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Send your challenger a short message here...</label>
+        </div>
+      </div>
+
+      <a ng-click="sendEmail()" class="waves-effect waves-light btn">Send Email</a>
+
+    </form>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 angular.module('strava.friends', [])
 
-.controller('FriendsController', function (Data, $scope) {
+.controller('FriendsController', function (Data, sharedProperties, $scope, $location) {
   $scope.data = {};
+  $scope.mouseOver = false;
   var friendId;
 
   $scope.getFriendId = function (friend) {
@@ -29,31 +30,10 @@ angular.module('strava.friends', [])
     return newArray;
   };
 
-  // $scope.$watch('data.chunkedFriends', function(val) {
-  //   $scope.data = [].concat.apply([], val);
-  // }, true); // deep watch
-
+  $scope.goToEmail = function (friend) {
+    sharedProperties.setChallenger(friend);
+    $location.url('/email');
+  };
 
   getFriends();
-  $scope.data.challenge = '';
-})
-.directive('friendpic', [function () {
-  return {
-    restrict: 'E',
-    replace: true,
-    template: '<div class="overlay"><img class="friend_pic" src= " {{ friend.profile }}"  alt="Profile Picture"></div>',
-    link: function (scope, elm, attrs) {
-      elm
-        .on('mouseenter', function () {
-          console.log('elm',elm);
-          elm.find('img').css({ '': 'rgba(0,0,0,.5)'
-          });
-          console.log('mouseenter');
-        })
-        .on('mouseleave', function () {
-          elm.css('color', 'white');
-          console.log('mouseleave');
-        });
-    }
-  };
-}]);
+});

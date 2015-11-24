@@ -1,9 +1,8 @@
 angular.module('strava.compete', [])
 
-.controller('CompeteController', function (Data, $scope) {
-  // vm = ViewModel
-  // var vm = this;
-  // vm.data = {};
+.controller('CompeteController', function (Data, sharedProperties, $scope) {
+  // This is 
+  $scope.challenger = sharedProperties.getChallenger();
   $scope.data = {};
   var friendId;
 

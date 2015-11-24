@@ -1,8 +1,10 @@
 angular.module('strava', [
                           'services.auth',
                           'services.data',
+                          'services.sharedProperties',
                           'strava.compete',
                           'strava.friends',
+                          'strava.email',
                           'strava.auth',
                           'ngRoute'
 ])
@@ -20,6 +22,10 @@ angular.module('strava', [
     .when('/friends', {
       templateUrl: 'app/friends/friends.html',
       controller: 'FriendsController'
+    })
+    .when('/email', {
+      templateUrl: 'app/email/email.html',
+      controller: 'EmailController'
     })
     $httpProvider.interceptors.push('AttachTokens');
 })
