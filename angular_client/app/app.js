@@ -6,7 +6,10 @@ angular.module('strava', [
                           'strava.friends',
                           'strava.email',
                           'strava.auth',
-                          'ngRoute'
+                          'ngRoute',
+                          'ngProgress',
+                          'd3',
+                          'strava.directives'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider

@@ -1,8 +1,9 @@
 angular.module('strava.friends', [])
 
-.controller('FriendsController', function (Data, sharedProperties, $scope, $location) {
+.controller('FriendsController', function (Data, sharedProperties, ngProgressFactory, $scope, $location) {
   $scope.data = {};
   $scope.mouseOver = false;
+  $scope.progressbar = ngProgressFactory.createInstance();
   var friendId;
 
   $scope.getFriendId = function (friend) {
@@ -11,11 +12,13 @@ angular.module('strava.friends', [])
   };
 
   var getFriends = function () {
+    $scope.progressbar.start();
     Data.getFriends()
     .then(function (resp) {
       console.log('getFriends', resp.data);
       resp.data.splice(3, 1);
       $scope.data.chunkedFriends = chunk(resp.data, 4);
+      $scope.progressbar.complete()
     })
     .catch(function (error) {
       console.log(error);

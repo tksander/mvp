@@ -28,7 +28,6 @@ angular.module('services.data', [])
 
   var getAthletesStats = function (athleteId) {
     athleteId = athleteId || 3888371;
-    console.log('in data', athleteId);
     return $http({
       method: 'POST',
       url: '/api/strava/athletesStats',
@@ -36,11 +35,29 @@ angular.module('services.data', [])
     });
   };
 
+  var getActivities = function (athleteId) {
+    // athleteId = athleteId || 3888371;
+    return $http({
+      method: 'POST',
+      url: '/api/strava/activities'
+      // data:   {arg: {id: athleteId}}
+    });
+  };
+
+  var getAllActivities = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/strava/allActivities',
+    });
+  }
+
   var service = {
     getFriends: getFriends,
     getAthleteProfile: getAthleteProfile,
     getAthletesProfile: getAthletesProfile,
-    getAthletesStats: getAthletesStats
+    getAthletesStats: getAthletesStats,
+    getActivities: getActivities,
+    getAllActivities: getAllActivities
   };
   return service;
 });
