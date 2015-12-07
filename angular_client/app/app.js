@@ -11,6 +11,7 @@ angular.module('strava', [
                           'd3',
                           'strava.directives'
 ])
+// executed during provider registrations and configuration phase
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {

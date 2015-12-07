@@ -1,5 +1,11 @@
-angular.module('services.sharedProperties', [])
-  .service('sharedProperties', function () {
+(function() {
+  'use strict';
+
+  angular
+    .module('services.sharedProperties', [])
+    .service('sharedProperties', sharedProperties);
+
+  function sharedProperties () {
     var challenger = null;
 
       var getChallenger = function () {
@@ -14,4 +20,5 @@ angular.module('services.sharedProperties', [])
         getChallenger: getChallenger,
         setChallenger: setChallenger
       };
-  })
+  };
+})();

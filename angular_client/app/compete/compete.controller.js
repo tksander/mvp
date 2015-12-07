@@ -1,10 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('strava.compete', [])
+  angular
+    .module('strava.compete', [])
+    .controller('CompeteController', CompeteController);
 
-  .controller('CompeteController', function (Data, sharedProperties, $scope) {
-    // This is 
+   function CompeteController (Data, sharedProperties, $scope) {
     $scope.challenger = sharedProperties.getChallenger();
     $scope.data = {};
 
@@ -72,5 +73,6 @@
     getAllActivities();
     getAthleteProfile();
     getAthletesStats();
-  });
+  };
+
 })();
