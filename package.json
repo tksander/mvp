@@ -24,8 +24,5 @@
     "materialize-css": "^0.97.1",
     "mongoose": "^3.8.35",
     "morgan": "^1.6.1"
-  },
-  "devDependencies": {
-    "bower": "~1.2.8"
   }
 }

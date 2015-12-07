@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('services.data', [])
+    .module('strava.data', [])
     .factory('Data', Data);
 
   function Data ($http) {

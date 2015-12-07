@@ -2,8 +2,8 @@
   'use strict';
   
   angular
-    .module('d3', [])
-    .factory('d3Service', ['$document', '$q', '$rootScope', d3]);
+    .module('strava.d3', [])
+    .factory('d3', ['$document', '$q', '$rootScope', d3]);
 
   function d3 ($document, $q, $rootScope) {
         

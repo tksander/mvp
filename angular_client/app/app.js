@@ -1,15 +1,16 @@
 angular.module('strava', [
-                          'services.auth',
-                          'services.data',
-                          'services.sharedProperties',
+                          'strava.auth',
+                          'strava.data',
+                          'strava.sharedProperties',
                           'strava.compete',
                           'strava.friends',
                           'strava.email',
                           'strava.auth',
                           'ngRoute',
                           'ngProgress',
-                          'd3',
-                          'strava.directives'
+                          'strava.d3',
+                          'strava.directives',
+
 ])
 // executed during provider registrations and configuration phase
 .config(function ($routeProvider, $httpProvider) {

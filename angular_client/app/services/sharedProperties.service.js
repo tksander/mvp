@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('services.sharedProperties', [])
+    .module('strava.sharedProperties', [])
     .service('sharedProperties', sharedProperties);
 
   function sharedProperties () {
