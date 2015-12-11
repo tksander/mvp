@@ -15,24 +15,41 @@ angular.module('strava', [
                           'ui.router'
 ])
 // executed during provider registrations and configuration phase
-.config(function ($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/', {
+.config(function ($stateProvider, $httpProvider) {
+  $stateProvider
+    .state('compete', {
+      url: '/',
       templateUrl: 'app/compete/compete.html',
       controller: 'CompeteController',
+      controllerAs: 'compete',
       authenticate: false
     })
-    .when('/signin', {
+    .state('signin', {
+      url: '/signin',
       templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+      controller: 'AuthController',
+      controllerAs: 'auth'
     })
-    .when('/friends', {
-      templateUrl: 'app/friends/friends.html',
-      controller: 'FriendsController'
+    .state('friends', {
+      url: '/friends',
+      views: {
+        'nav': {
+          templateUrl: 'app/navbar/navbar.html',
+          controller: 'NavbarController',
+          controllerAs: 'navbar'
+        },
+        '': {
+          templateUrl: 'app/friends/friends.html',
+          controller: 'FriendsController',
+          controllerAs: 'friends'
+        }
+      }
     })
-    .when('/email', {
+    .state('email', {
+      url: '/email',
       templateUrl: 'app/email/email.html',
-      controller: 'EmailController'
+      controller: 'EmailController',
+      controllerAs: 'email'
     })
     $httpProvider.interceptors.push('AttachTokens');
 })
