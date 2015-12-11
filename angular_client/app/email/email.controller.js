@@ -5,10 +5,11 @@
     .module('strava.email', [])
     .controller('EmailController', EmailController);
 
-  function EmailController ($scope, $location, sharedProperties) {
-    $scope.challenger = sharedProperties.getChallenger();
+  function EmailController ($location, sharedProperties) {
+    var vm = this;
+    vm.challenger = sharedProperties.getChallenger();
 
-    $scope.sendEmail = function () {
+    vm.sendEmail = function () {
       $location.url('/');
     };
   };

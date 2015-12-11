@@ -5,11 +5,11 @@
         <div class="card-content black-text">
           <div id='signin' >
             <h1>Sign In</h1>
-              <form name = "signinForm" ng-submit = 'signin()'>
-                <input type = 'text' ng-model = 'user.username'>
+              <form name="signinForm" ng-submit='auth.signin()'>
+                <input type='text' ng-model='auth.user.username'>
                 <button>signin</button>
                 <a href="api/strava/authorize"><img src="assets/LogInWithStrava.png" alt="" /></a>
-              </form>    <a href = '#signup'>Don't have an account? <strong>Signup</strong> ... </a> 
+              </form>    <a href='#signup'>Don't have an account? <strong>Signup</strong> ... </a> 
           </div>
         </div>
       </div>

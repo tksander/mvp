@@ -19,10 +19,19 @@ angular.module('strava', [
   $stateProvider
     .state('compete', {
       url: '/',
-      templateUrl: 'app/compete/compete.html',
-      controller: 'CompeteController',
-      controllerAs: 'compete',
-      authenticate: false
+      views: {
+        'navbar': {
+          templateUrl: 'app/navbar/navbar.html',
+          controller: 'NavbarController',
+          controllerAs: 'navbar'
+        },
+        '': {
+          templateUrl: 'app/compete/compete.html',
+          controller: 'CompeteController',
+          controllerAs: 'compete',
+          authenticate: false
+        }
+      }
     })
     .state('signin', {
       url: '/signin',
@@ -33,7 +42,7 @@ angular.module('strava', [
     .state('friends', {
       url: '/friends',
       views: {
-        'nav': {
+        'navbar': {
           templateUrl: 'app/navbar/navbar.html',
           controller: 'NavbarController',
           controllerAs: 'navbar'
@@ -47,9 +56,18 @@ angular.module('strava', [
     })
     .state('email', {
       url: '/email',
-      templateUrl: 'app/email/email.html',
-      controller: 'EmailController',
-      controllerAs: 'email'
+      views: {
+        'navbar': {
+          templateUrl: 'app/navbar/navbar.html',
+          controller: 'NavbarController',
+          controllerAs: 'navbar'
+        },
+        '': {
+          templateUrl: 'app/email/email.html',
+          controller: 'EmailController',
+          controllerAs: 'email'
+        }
+      }
     })
     $httpProvider.interceptors.push('AttachTokens');
 })

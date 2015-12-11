@@ -5,16 +5,15 @@
     .module('strava.compete', [])
     .controller('CompeteController', CompeteController);
 
-   function CompeteController (Data, sharedProperties, $scope) {
-    $scope.challenger = sharedProperties.getChallenger();
-    $scope.data = {};
-
-    $scope.data = [];
-
+   function CompeteController (Data, sharedProperties) {
+    var vm = this;
+    vm.challenger = sharedProperties.getChallenger();
+    vm.data = {};
+    vm.rideData = [];
     var friendId;
 
-    $scope.getFriendId = function (index) {
-      friendId = $scope.data.friends[index].id;
+    vm.getFriendId = function (index) {
+      friendId = vm.data.friends[index].id;
       console.log("Friend Id", friendId);
     };
 
@@ -23,11 +22,11 @@
       Data.getAthletesStats(athleteId)
       .then(function (resp) {
         // console.log('getAthleteStats', resp);
-        $scope.data.push({
+        vm.rideData.push({
           distance: resp.data.all_ride_totals.distance,
           activity: 'ride'
         });
-        $scope.data.push({
+        vm.rideData.push({
           distance: resp.data.all_run_totals.distance,
           activity: 'run'
         });
@@ -52,8 +51,8 @@
       .then(function (resp) {
         console.log('athelete profile:  ', resp);
         // vm.data.name = resp.data.firstname;
-        $scope.data.name = resp.data.firstname;
-        $scope.data.image = resp.data.profile;
+        vm.data.name = resp.data.firstname;
+        vm.data.image = resp.data.profile;
       })
       .catch(function (error) {
         console.log(error);

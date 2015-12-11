@@ -4,8 +4,8 @@
       <div class="card  white lighten-1">
         <div class="card-content black-text">
           <span class="card-title">Select Your Challenger!</span>
-          <div class="row" ng-repeat="rows in data.chunkedFriends">
-            <div class="col s3" ng-click="getFriendId(friend); goToEmail(friend)" ng-repeat="friend in rows">
+          <div class="row" ng-repeat="rows in friends.data.chunkedFriends">
+            <div class="col s3" ng-click="friends.getFriendId(friend); friends.goToEmail(friend)" ng-repeat="friend in rows">
               <div class="imgWrap">
                 <img class="friend_pic" src= " {{ friend.profile }}"  alt="Profile Picture">
                 <p class="imgDescription">

@@ -5,25 +5,23 @@
     .module('strava.friends', [])
     .controller('FriendsController', FriendsController);
 
-  function FriendsController (Data, sharedProperties, ngProgressFactory, $scope, $location) {
-    $scope.data = {};
-    $scope.mouseOver = false;
-    $scope.progressbar = ngProgressFactory.createInstance();
+  function FriendsController (Data, sharedProperties, ngProgressFactory, $location) {
+    var vm = this;
+    vm.data = {};
+    vm.progressbar = ngProgressFactory.createInstance();
     var friendId;
 
-    $scope.getFriendId = function (friend) {
+    vm.getFriendId = function (friend) {
       friendId = friend.id;
-      console.log("Friend Id", friendId);
     };
 
     var getFriends = function () {
-      $scope.progressbar.start();
+      vm.progressbar.start();
       Data.getFriends()
       .then(function (resp) {
-        console.log('getFriends', resp.data);
         resp.data.splice(3, 1);
-        $scope.data.chunkedFriends = chunk(resp.data, 4);
-        $scope.progressbar.complete()
+        vm.data.chunkedFriends = chunk(resp.data, 4);
+        vm.progressbar.complete()
       })
       .catch(function (error) {
         console.log(error);
@@ -38,7 +36,7 @@
       return newArray;
     };
 
-    $scope.goToEmail = function (friend) {
+    vm.goToEmail = function (friend) {
       sharedProperties.setChallenger(friend);
       $location.url('/email');
     };

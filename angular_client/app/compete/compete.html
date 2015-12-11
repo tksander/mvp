@@ -3,9 +3,9 @@
     <div class="col s6">
       <div class="card  white lighten-1">
         <div class="card-content black-text">
-          <img src= " {{ data.image }} "  alt="Profile Picture" class="circle">
-          <span class="card-title">{{ data.name }}</span>
-          <div d3-bars data="data" bar-height="20" bar-padding="5"></div>
+          <img src= " {{ compete.data.image }} "  alt="Profile Picture" class="circle">
+          <span class="card-title">{{ compete.data.name }}</span>
+          <div d3-bars data="compete.rideData" bar-height="20" bar-padding="5"></div>
         </div>
       </div>
     </div>
@@ -13,7 +13,7 @@
     <div class="col s6">
       <div class="card  white lighten-1">
         <div class="card-content black-text">
-          <span class="card-title">{{ challenger.firstname }}</span>
+          <span class="card-title">{{ compete.challenger.firstname }}</span>
         </div>
       </div>
     </div>
