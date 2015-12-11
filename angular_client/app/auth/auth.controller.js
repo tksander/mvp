@@ -29,6 +29,6 @@
           console.error(error);
         });
     };
-  });
+  };
 
 })();

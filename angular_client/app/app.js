@@ -1,16 +1,18 @@
 angular.module('strava', [
+                          // Inject client modules
                           'strava.auth',
                           'strava.data',
                           'strava.sharedProperties',
                           'strava.compete',
                           'strava.friends',
                           'strava.email',
-                          'strava.auth',
-                          'ngRoute',
-                          'ngProgress',
+                          'services.auth',  // TODO: Collapse services into Services module
                           'strava.d3',
                           'strava.directives',
-
+                          // Inject 3rd-party modules
+                          'ngRoute',
+                          'ngProgress',
+                          'ui.router'
 ])
 // executed during provider registrations and configuration phase
 .config(function ($routeProvider, $httpProvider) {

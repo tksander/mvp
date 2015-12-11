@@ -3,16 +3,16 @@
 
 angular
   .module('strava.directives', [])
-  .directive('d3Bars', ['$window', '$timeout', 'd3Service', d3Bars]);
+  .directive('d3Bars', ['$window', '$timeout', 'd3', d3Bars]);
 
-  function d3Bars ($window, $timeout, d3Service) {
+  function d3Bars ($window, $timeout, d3) {
     return {
       restrict: 'EA',
       scope: {
         data: '=' // bi-directional data-binding
       },
       link: function (scope, ele, attrs) {
-        d3Service.d3()
+        d3.d3()
           .then(function (d3) {
 
             var margin = parseInt(attrs.margin) || 20;
