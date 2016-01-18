@@ -10,9 +10,6 @@
   "engines": {
     "node": "0.12.5"
   },
-  "scripts": {
-    "start": "node server/server.js"
-  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "4.13.3",
