@@ -8,7 +8,7 @@
     "url": "https://github.com/tksander/strava-challenge"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "0.12.5"
   },
   "scripts": {
     "start": "node server/server.js"
