@@ -7,11 +7,15 @@
     "type": "git",
     "url": "https://github.com/tksander/strava-challenge"
   },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "engines": {
     "node": "0.12.5"
   },
   "dependencies": {
     "body-parser": "^1.14.1",
+    "bower": "^1.7.2",
     "express": "4.13.3",
     "jwt-simple": "^0.3.1",
     "materialize-css": "^0.97.1",
