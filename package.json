@@ -1,24 +1,21 @@
 {
-  "name": "myapp",
-  "description": "Boilerplate web app using node, express, mongodb, backbone, marionette.  Tooling includes Grunt, Bower, Browserify, etc.",
+  "name": "Strava-compete",
+  "description": "Web app using node, express, mongodb, angular. Allows users to start fitness competitions via Strava",
   "version": "0.0.1",
-  "author": "Jason Krol",
+  "author": "Tommy Sander",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkat98/benm.git"
+    "url": "https://github.com/tksander/strava-challenge"
   },
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server/server.js"
   },
   "dependencies": {
-    "MD5": "~1.2.0",
     "body-parser": "^1.14.1",
     "express": "4.13.3",
-    "express3-handlebars": "~0.5.0",
-    "handlebars-runtime": "~1.0.12",
     "jwt-simple": "^0.3.1",
     "materialize-css": "^0.97.1",
     "mongoose": "^3.8.35",
