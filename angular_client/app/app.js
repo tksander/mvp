@@ -11,7 +11,7 @@ angular.module('strava', [
                           'strava.directives',
                           // Inject 3rd-party modules
                           'ngRoute',
-                          'ngProgress',
+                          // 'ngProgress',
                           'ui.router'
 ])
 // executed during provider registrations and configuration phase

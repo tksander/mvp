@@ -38,4 +38,7 @@ bower_components/
 # DS store
 .DS_Store
 
+# API keys
+localTokens.js
+
 notes

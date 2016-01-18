@@ -5,10 +5,10 @@
     .module('strava.friends', [])
     .controller('FriendsController', FriendsController);
 
-  function FriendsController (Data, sharedProperties, ngProgressFactory, $location) {
+  function FriendsController (Data, sharedProperties, $location) {
     var vm = this;
     vm.data = {};
-    vm.progressbar = ngProgressFactory.createInstance();
+    // vm.progressbar = ngProgressFactory.createInstance();
     var friendId;
 
     vm.getFriendId = function (friend) {
@@ -16,7 +16,7 @@
     };
 
     var getFriends = function () {
-      vm.progressbar.start();
+      // vm.progressbar.start();
       Data.getFriends()
       .then(function (resp) {
         resp.data.splice(3, 1);

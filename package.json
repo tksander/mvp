@@ -8,7 +8,8 @@
     "url": "https://github.com/tksander/strava-challenge"
   },
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node server/server.js"
   },
   "engines": {
     "node": "0.12.5"
